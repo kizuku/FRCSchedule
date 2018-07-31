@@ -1,9 +1,11 @@
-var api = require('/vars.js');
+const apiUrl = process.env.apiUrl;
+const apiKey = process.env.apiKey;
+
 function buildUrl (team, event) {
-    return api.apiUrl + 'team/frc' + team + '/event/2017' + event + '/matches/simple' 
+    return apiUrl + 'team/frc' + team + '/event/2017' + event + '/matches/simple' 
 }
 
-axios.defaults.headers.common['X-TBA-Auth-Key'] = api.apiKey
+axios.defaults.headers.common['X-TBA-Auth-Key'] = apiKey
 
 const vm = new Vue({
     el: '#app',
