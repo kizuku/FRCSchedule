@@ -1,0 +1,47 @@
+form {
+    padding: 5px;
+}
+
+.table {
+    margin-bottom: 0px;
+}
+
+th {
+    text-align: center;
+    height: 40px;
+    font-size: 16px;
+    font-family: 'Raleway';
+}
+
+td {
+    text-align: center;
+    height: 40px;
+    font-size: 16px;
+    font-family: 'Raleway';
+}
+
+.watchedTeam {
+    background-color: yellow;
+}
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 34px;
+    font-family: 'Chathura';
+    padding-bottom: 5px;
+    padding-left: 5px;
+    background-color: #00cccc;
+}
+
+#footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 34px;
+    font-family: 'Chathura';
+    padding-top: 5px;
+    padding-left: 5px;
+    background-color: #00cccc;
+}
