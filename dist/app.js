@@ -1,6 +1,3 @@
-var apiUrl = 'https://www.thebluealliance.com/api/v3/'
-var apiKey = 'exJ8N6aK7Y5Fh8t2l5NDLJXaLaamWqI4ZjggCGvxDrbFiCca5Gn1kDj4FoYLypAb' 
-
 function buildUrl (team, event) {
     return apiUrl + 'team/frc' + team + '/event/2017' + event + '/matches/simple' 
 }
