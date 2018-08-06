@@ -8,6 +8,7 @@ yarn-error.log*
 selenium-debug.log
 *vars.js
 .env
+dist/static/js/*
 
 # Editor directories and files
 .idea

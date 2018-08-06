@@ -32,13 +32,18 @@
     <body>
         <header> FRC Competition Schedule Board </header>
         <div id = "app">
+            <!--
             <form id = "teamNum">
                 Enter team number: <input name = "num">
             </form>
             <form id = "eventCode">
                 Enter event code: <input name = "code">
             </form>
-
+            -->
+            <div class = "paramSet">
+                <p> Team Number: <input id = "teamNum" type = "text" value = "Enter a team number" /> Event Code: <input id = "eventCode" type = "text" value = "Enter an event code" /> </p>
+                <button v-on:click="test">Set Parameters</button>
+            </div>
             <table class = "table table-bordered">
                 <thead>
                     <tr>

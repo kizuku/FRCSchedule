@@ -11,6 +11,9 @@ var apiKey = 'exJ8N6aK7Y5Fh8t2l5NDLJXaLaamWqI4ZjggCGvxDrbFiCca5Gn1kDj4FoYLypAb';
 console.log("apiUrl = " + apiUrl)
 console.log("apiKey = " + apiKey)
 
+var teamNum = '1758'
+var eventCode = 'scmb'
+
 function buildUrl (team, event) {
     return apiUrl + 'team/frc' + team + '/event/2017' + event + '/matches/simple' 
 }
@@ -25,8 +28,16 @@ const vm = new Vue({
         ],
         matches: []
     },
+    methods: {
+        setParams: function (event) {
+
+        },
+        test: function (event) {
+            alert('Test')
+        } 
+    },
     mounted() {
-        axios.get(buildUrl('1758', 'scmb')).then(result => {
+        axios.get(buildUrl(teamNum, eventCode)).then(result => {
             console.log(result.data); 
             
             var match;
