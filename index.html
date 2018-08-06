@@ -32,19 +32,11 @@
     <body>
         <header> FRC Competition Schedule Board </header>
         <div id = "app">
-            <!--
-            <form id = "teamNum">
-                Enter team number: <input name = "num">
-            </form>
-            <form id = "eventCode">
-                Enter event code: <input name = "code">
-            </form>
-            -->
             <div class = "paramSet">
-                <p> Team Number: <input id = "teamNum" type = "text" value = "Enter a team number" /> Event Code: <input id = "eventCode" type = "text" value = "Enter an event code" /> </p>
-                <button v-on:click="test">Set Parameters</button>
+                <p> Team Number: <input id = "teamNum" type = "text" /> Event Code: <input id = "eventCode" type = "text" /> </p>
+                <button v-on:click="setParams">Set Parameters</button>
             </div>
-            <table class = "table table-bordered">
+            <table class = "table table-bordered" v-show="visible">
                 <thead>
                     <tr>
                         <th v-for = "category in categories">
@@ -55,14 +47,14 @@
                 <tbody>
                     <tr v-for = "match in matches"> 
                         <td> {{ match.matchNum }} </td>
-                        <td v-bind:class = "{ watchedTeam: match.red1 == 1758 }"> {{ match.red1 }} </td>
-                        <td v-bind:class = "{ watchedTeam: match.red2 == 1758 }"> {{ match.red2 }} </td>
-                        <td v-bind:class = "{ watchedTeam: match.red3 == 1758 }"> {{ match.red3 }} </td>
+                        <td v-bind:class = "{ watchedTeam: match.red1 == teamNum }"> {{ match.red1 }} </td>
+                        <td v-bind:class = "{ watchedTeam: match.red2 == teamNum }"> {{ match.red2 }} </td>
+                        <td v-bind:class = "{ watchedTeam: match.red3 == teamNum }"> {{ match.red3 }} </td>
                         <td> {{ match.redScore }} </td>
                         <td> {{ match.blueScore }} </td>
-                        <td v-bind:class = "{ watchedTeam: match.blue1 == 1758 }"> {{ match.blue1 }} </td>
-                        <td v-bind:class = "{ watchedTeam: match.blue2 == 1758 }"> {{ match.blue2 }} </td>
-                        <td v-bind:class = "{ watchedTeam: match.blue3 == 1758 }"> {{ match.blue3 }} </td>
+                        <td v-bind:class = "{ watchedTeam: match.blue1 == teamNum }"> {{ match.blue1 }} </td>
+                        <td v-bind:class = "{ watchedTeam: match.blue2 == teamNum }"> {{ match.blue2 }} </td>
+                        <td v-bind:class = "{ watchedTeam: match.blue3 == teamNum }"> {{ match.blue3 }} </td>
                     </tr>
                 </tbody>
             </table>
