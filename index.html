@@ -63,6 +63,7 @@
                 </thead>
                 <tbody>
                     <tr v-for = "match in matches"> 
+                        <td> {{ match.level }} </td>
                         <td> {{ match.matchNum }} </td>
                         <td v-bind:class = "{ watchedTeam: match.red1 == teamNum }"> {{ match.red1 }} </td>
                         <td v-bind:class = "{ watchedTeam: match.red2 == teamNum }"> {{ match.red2 }} </td>
@@ -72,6 +73,42 @@
                         <td v-bind:class = "{ watchedTeam: match.blue1 == teamNum }"> {{ match.blue1 }} </td>
                         <td v-bind:class = "{ watchedTeam: match.blue2 == teamNum }"> {{ match.blue2 }} </td>
                         <td v-bind:class = "{ watchedTeam: match.blue3 == teamNum }"> {{ match.blue3 }} </td>
+                    </tr>
+                    <tr v-for = "match in qf">
+                            <td> {{ match.level }} </td>
+                            <td> {{ match.matchNum }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.red1 == teamNum }"> {{ match.red1 }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.red2 == teamNum }"> {{ match.red2 }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.red3 == teamNum }"> {{ match.red3 }} </td>
+                            <td> {{ match.redScore }} </td>
+                            <td> {{ match.blueScore }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.blue1 == teamNum }"> {{ match.blue1 }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.blue2 == teamNum }"> {{ match.blue2 }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.blue3 == teamNum }"> {{ match.blue3 }} </td>
+                    </tr>
+                    <tr v-for = "match in sf">
+                            <td> {{ match.level }} </td>
+                            <td> {{ match.matchNum }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.red1 == teamNum }"> {{ match.red1 }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.red2 == teamNum }"> {{ match.red2 }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.red3 == teamNum }"> {{ match.red3 }} </td>
+                            <td> {{ match.redScore }} </td>
+                            <td> {{ match.blueScore }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.blue1 == teamNum }"> {{ match.blue1 }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.blue2 == teamNum }"> {{ match.blue2 }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.blue3 == teamNum }"> {{ match.blue3 }} </td>
+                    </tr>
+                    <tr v-for = "match in f">
+                            <td> {{ match.level }} </td>
+                            <td> {{ match.matchNum }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.red1 == teamNum }"> {{ match.red1 }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.red2 == teamNum }"> {{ match.red2 }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.red3 == teamNum }"> {{ match.red3 }} </td>
+                            <td> {{ match.redScore }} </td>
+                            <td> {{ match.blueScore }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.blue1 == teamNum }"> {{ match.blue1 }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.blue2 == teamNum }"> {{ match.blue2 }} </td>
+                            <td v-bind:class = "{ watchedTeam: match.blue3 == teamNum }"> {{ match.blue3 }} </td>
                     </tr>
                 </tbody>
             </table>
