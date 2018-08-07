@@ -25,7 +25,9 @@
 
         <link href='https://fonts.googleapis.com/css?family=Chathura' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
         <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen">
     </head>
 
@@ -33,8 +35,18 @@
         <header> FRC Competition Schedule Board </header>
         <div id = "app">
             <div class = "paramSet">
-                <p> Team Number: <input id = "teamNum" type = "text" /> Event Code: <input id = "eventCode" type = "text" /> </p>
-                <button v-on:click="setParams">Set Parameters</button>
+                <p> 
+                    Team Number: <input id = "teamNum" type = "text" /> 
+                    Event Code: <input id = "eventCode" type = "text" /> 
+                    Year: <input id = "year" type = "text" />
+                    
+                    <!--
+                        <b-dropdown id="ddown-sm" text="Choose an event code" class = "m-2">
+                            <b-dropdown-item v-for = "event in events"> {{ event.eventCode }} </b-dropdown-item>
+                        </b-dropdown>
+                    -->
+                    <button v-on:click="createTable">Set Parameters</button>
+                </p>
             </div>
             <table class = "table table-bordered" v-show="visible">
                 <thead>
@@ -67,6 +79,8 @@
         <script src="https://unpkg.com/vue"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src = "app.js"></script>
+        <script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+        <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
     
     </body>
 </html>
