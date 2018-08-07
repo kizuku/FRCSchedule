@@ -34,7 +34,7 @@ const vm = new Vue({
         createTable: function (event) {
             this.visible = true
             this.teamNum = document.getElementById("teamNum").value;
-            this.eventCode = document.getElementById("eventCode").value;
+            this.eventCode = document.getElementById("eventCode").value.toLowerCase();
             this.year = document.getElementById("year").value;
             console.log("teamNum: " + this.teamNum);
             console.log("eventCode: " + this.eventCode);
