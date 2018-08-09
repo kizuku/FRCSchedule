@@ -1,22 +1,3 @@
-//var apiUrl = process.env.apiUrl;
-//var apiKey = process.env.apiKey;
-
-var apiUrl = 'https://www.thebluealliance.com/api/v3/';
-var apiKey = 'exJ8N6aK7Y5Fh8t2l5NDLJXaLaamWqI4ZjggCGvxDrbFiCca5Gn1kDj4FoYLypAb';
-
-//var myVars = require('./vars.js');
-//var apiUrl = myVars.apiUrl;
-//var apiKey = myVars.apiKey;
-
-//console.log("apiUrl = " + apiUrl)
-//console.log("apiKey = " + apiKey)
-
-function buildUrl (team, event, year) {
-    return apiUrl + 'team/frc' + team + '/event/' + year + event + '/matches/simple' 
-}
-
-axios.defaults.headers.common['X-TBA-Auth-Key'] = apiKey
-
 const vm = new Vue({
     el: '#app',
     data: {
@@ -39,16 +20,14 @@ const vm = new Vue({
             this.teamNum = document.getElementById("teamNum").value;
             this.eventCode = document.getElementById("eventCode").value.toLowerCase();
             this.year = document.getElementById("year").value;
-            // console.log("teamNum: " + this.teamNum);
-            // console.log("eventCode: " + this.eventCode);
 
             this.matches = [];
             this.qf = [];
             this.sf = [];
             this.f = [];
             
-            axios.get(buildUrl(this.teamNum, this.eventCode, this.year)).then(result => {
-                // console.log(result.data); 
+            axios.get('/api', { headers: { year: this.year, event: this.eventCode, team: this.teamNum }}).then(result => {
+                console.log(result.data); 
                 
                 var match;
                 for (match in result.data) {
@@ -113,24 +92,10 @@ const vm = new Vue({
                 this.matches.sort(function(a, b) {
                     return parseFloat(a.matchNum) - parseFloat(b.matchNum);
                 });
-    
-                //console.log(this.matches);
             })
         }
     },
     mounted() {
-        axios.get(apiUrl + 'events/' + this.year + '/keys').then(result => {
-
-            // console.log(result.data)
-
-            var event;
-            for (event in result.data) {
-                this.events.push({
-                    "eventCode": result.data[event].substring(4)
-                })
-            }
-
-            // console.log(this.events)
-        })
+        
     }
 });

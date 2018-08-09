@@ -40,11 +40,6 @@
                     Event Code: <input id = "eventCode" type = "text" /> 
                     Year: <input id = "year" type = "text" />
                     
-                    <!--
-                        <b-dropdown id="ddown-sm" text="Choose an event code" class = "m-2">
-                            <b-dropdown-item v-for = "event in events"> {{ event.eventCode }} </b-dropdown-item>
-                        </b-dropdown>
-                    -->
                     <button v-on:click="createTable">Set Parameters</button>
                 </p>
                 <p>
@@ -121,8 +116,5 @@
         <script src="https://unpkg.com/vue"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src = "app.js"></script>
-        <script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
-        <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
-    
     </body>
 </html>
