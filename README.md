@@ -1,6 +1,23 @@
 # frc-schedule
 
 > Schedule board for FRC competition matches.
+> Project can be found online at frc-schedule.herokuapp.com
+> Requires an internet connection to make API calls.
+> Made with VueJS frontend and NodeJS backend.
+
+## Environment Variable Setup
+To make this work for yourself, make sure to properly set env vars.
+
+To run on Local: 
+	Create a .env file in the root directory of the project containing the following:
+		apiUrl=<insert api url here>
+		apiKey=<insert api key here>
+
+To run on Heroku:
+	Set heroku config vars as follows:
+		heroku config:set apiUrl=<insert api url here>
+		heroku config:set apiKey=<insert api key here>
+	
 
 ## Build Setup
 
