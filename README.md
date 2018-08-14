@@ -1,9 +1,10 @@
 # frc-schedule
 
-> Schedule board for FRC competition matches.
-> Project can be found online at frc-schedule.herokuapp.com
-> Requires an internet connection to make API calls.
-> Made with VueJS frontend and NodeJS backend.
+Schedule board for FRC competition matches.
+Project can be found online at frc-schedule.herokuapp.com. Requires an internet connection to make API calls.
+Made with VueJS frontend and NodeJS backend.
+
+Has not yet been tested during live competition. Please test and provide feedback so that the tool can be improved.
 
 ## Environment Variable Setup
 To make this work for yourself, make sure to properly set env vars.
